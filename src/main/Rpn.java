@@ -1,11 +1,20 @@
 package main;
 
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
+import java.util.Scanner;
+
 public class Rpn extends ReversePolishNotation {
     public static void main(String[] args) {
-        check("(a+(b*c))\n" +               // enter the expression
-                "((a+b)*(z+x))\n" +
-                "((a+t)*((b+(a+c))^(c+d)))");
-
+        Scanner in  = new Scanner(System.in);
+        System.out.println("Enter number of expression: ");
+        int number = in.nextInt();
+        for (int i = 0; i < number; i++)
+            if(i <= 100) {
+                System.out.println("Enter your expression: ");
+                String input = in.next();
+                check(input);
+            }
     }
 }

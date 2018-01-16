@@ -4,11 +4,17 @@ import java.util.Stack;
 
 public class ReversePolishNotation {
 
-    public static void  check(String input){                                        // checking text grouped in [ ] does not appear in the input file.
+    /*public static void numberOfexpressions(int value){
+        if(value <= 100){
+
+        }
+    }*/
+
+    public static void  check(String input){                                        // checking text grouped in [ ] does not appear in the input line.
         String s = input.replaceAll("(\\]|\\[).*(\\]|\\[)", " ");
-        if(s != null)
+        if(s != null && s.length() <= 400)
         execute(s);
-        else System.out.println("Enter algebraic expression");
+        else System.out.println("Enter algebraic expression is empty or too long");
 
     }
     public static void execute(String s){                                           // RPN transformation
